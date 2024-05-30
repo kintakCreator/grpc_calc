@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package calculator;
+
+service CalculatorService {
+    rpc sendAddRequest (Arguments) returns (ResultReply) {}
+    rpc sendSubRequest (Arguments) returns (ResultReply) {}
+    rpc sendMulRequest (Arguments) returns (ResultReply) {}
+    rpc sendDivRequest (Arguments) returns (ResultReply) {}
+}
+
+message Arguments {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message ResultReply {
+    int64 result = 1;
+    string errorMessage = 2;
+}
